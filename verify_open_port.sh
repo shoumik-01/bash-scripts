@@ -9,6 +9,6 @@ read path
 
 case $type in
         "t") for i in `cat $path`; do echo -e results for $i '\n'; nc -z -v -w5 $i $port; echo -e '\n' ------; done;;
-        "u") for i in `cat $path`; do echo -e results for $i '\n'; nc -z -v -w5 -u $i $port; echo -e '\n' ------; done;;
+        "u") for i in `cat $path`; do echo -e results for $i '\n'; nmap -sU -v -p $port $i; echo -e '\n' ------; done;;
         *) echo 'Unknown port type, try "t" for TCP and "u" for UDP';;
 esac
