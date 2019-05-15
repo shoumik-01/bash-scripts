@@ -1,3 +1,4 @@
 ip r l | grep src | awk '{for (i=1;i<=NF;i++) if ($i == "src") {print $(i+1)};}' ##Gives you IP
 ps -ax | grep <process> | grep -v grep | cut -c 1-5 | xargs kill -9 ##Kill process
 vmstat 1 2 -a | tail -1 | awk '{print $13+$14}' ##CPU usage
+who -u | grep <user> | awk '{print $6}' | xargs kill -9 ##Kill user's session
