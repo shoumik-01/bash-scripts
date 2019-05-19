@@ -7,7 +7,6 @@ read n
 printf "\nDelay between emails (0 for no delay): "
 read delay
 
-
 i=1
 while [ $i -le $n ]
 do
