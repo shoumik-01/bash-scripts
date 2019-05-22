@@ -4,3 +4,4 @@ vmstat 1 2 -a | tail -1 | awk '{print $13+$14}' ##CPU usage
 top -b -n 1 | grep -i cpu | head -1 | awk '{print $2}' ##CPU usage using top
 who -u | grep <user> | awk '{print $6}' | xargs kill -9 ##Kill user's session
 tcpdump -XX -i any host <remote host address> -w filename.pcap ##Isolate inbound and outbound traffic from a remote host
+tcpdump -nn -i any tcp port 25 | awk '{print $3}' | cut -d "." -f 1,2,3,4 ##Isolate addresses talking to SMTP server
