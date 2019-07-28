@@ -7,3 +7,4 @@ tcpdump -XX -i any host <remote host address> -w filename.pcap ##Isolate inbound
 tcpdump -nn -i any tcp port 25 | awk '{print $3}' | cut -d "." -f 1,2,3,4 | sort -u ##Isolate addresses talking to SMTP server
 dmidecode -t bios -t chassis -t baseboard -t system | egrep "BIOS Information|Vendor:|System Information|Manufacturer:|Product Name:|UUID:|Chassis Information|Manufacturer:|Asset Tag:|Base Board Information|Manufacturer:"
 grep "^[^#;]" <config file> ##Read all lines which are not commented out
+ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10 ##find processes using the most CPU cycles
