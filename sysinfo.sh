@@ -12,8 +12,7 @@ USED_MEM=$(vmstat -s | head -2 | grep used | awk '{print $1}')
 USED_CPU=$(vmstat 1 2 -a | tail -1 | awk '{print $13+$14}')
 OS=$(lsb_release -a | tail -4)
 KERNEL=$(cat /proc/version)
-DMI=$(dmidecode -t bios -t chassis -t baseboard -t system | egrep "BIOS Information|Vendor:|System Information|Manufacturer:|Product Name:|UUID:|Chassis Information|Manufacturer:|Asset Tag:|Base Board Informati
-on|Manufacturer:")
+DMI=$(dmidecode -t bios -t chassis -t baseboard -t system | egrep "BIOS Information|Vendor:|System Information|Manufacturer:|Product Name:|UUID:|Chassis Information|Manufacturer:|Asset Tag:|Base Board Information|Manufacturer:")
 
 ##Disk and FS##
 
