@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ##This is only for machines joined to AD through SSSD, please don't use for local accounts.
-
+##Please create a restricted shell for relevent users before executing this script.
 
 ls -1 /home | grep -Ev "svc_unix|hasans" >> /tmp/users.txt
 
