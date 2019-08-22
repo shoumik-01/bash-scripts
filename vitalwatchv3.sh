@@ -16,7 +16,7 @@ do
         if [ $CPU_INT -ge $CPU_TRIGGER ] || [ $MEM_INT -ge $MEM_TRIGGER ]; then
                 echo "$DATE: $CPU $MEMB" >> $OUTPUT
         else
-                cat /dev/null
+                cat /dev/null >> $OUTPUT
         fi
         sleep 1
 done
