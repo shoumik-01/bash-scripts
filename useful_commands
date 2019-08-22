@@ -8,3 +8,4 @@ tcpdump -nn -i any tcp port 25 | awk '{print $3}' | cut -d "." -f 1,2,3,4 | sort
 dmidecode -t bios -t chassis -t baseboard -t system | egrep "BIOS Information|Vendor:|System Information|Manufacturer:|Product Name:|UUID:|Chassis Information|Manufacturer:|Asset Tag:|Base Board Information|Manufacturer:"
 grep "^[^#;]" <config file> ##Read all lines which are not commented out
 ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10 ##find processes using the most CPU cycles
+cat output.txt | awk '$3 > 5 {print ;}' ##Check to see if the value in the third column is bigger than 5 or not
