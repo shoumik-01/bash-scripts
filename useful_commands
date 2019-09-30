@@ -9,3 +9,6 @@ dmidecode -t bios -t chassis -t baseboard -t system | egrep "BIOS Information|Ve
 grep "^[^#;]" <config file> ##Read all lines which are not commented out
 ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10 ##find processes using the most CPU cycles
 cat output.txt | awk '$3 > 5 {print ;}' ##Check to see if the value in the third column is bigger than 5 or not
+openssl x509 -in cert.pem -text -noout ##Read a SSL cert
+openssl pkcs12 -in wildcard.pfx -nocerts -out key.pem -nodes ##Generate key from pfx file
+openssl pkcs12 -in wildcard.pfx -nokeys -out cert.pem -nodes ##Generate SSL cert from pfx file
