@@ -12,3 +12,4 @@ cat output.txt | awk '$3 > 5 {print ;}' ##Check to see if the value in the third
 openssl x509 -in cert.pem -text -noout ##Read a SSL cert
 openssl pkcs12 -in wildcard.pfx -nocerts -out key.pem -nodes ##Generate key from pfx file
 openssl pkcs12 -in wildcard.pfx -nokeys -out cert.pem -nodes ##Generate SSL cert from pfx file
+sar -q -s 06:00:00 -f /var/log/sa/sa08 ##SAR load average on the 8th day of the month, from 6AM
