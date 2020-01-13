@@ -38,7 +38,7 @@ function link_detect () {
         fi
 }
 function dns_check () {
-        rev_lookup=$(nslookup $ADDR $DNS_SRV1 | grep "name" | awk '{print $4}' | sed 's/.$//')
+        rev_lookup=$(nslookup $ADDR $DNS_SRV1 | grep "name" | grep -v "nameserver" | awk '{print $4}' | sed 's/.$//')
         for_lookup=$(nslookup $HOST $DNS_SRV2 | tail -2 | grep -i addr | awk '{print $2}')
         if [ "$rev_lookup" == "$HOST" ] && [ "$for_lookup" == "$ADDR" ]
         then
