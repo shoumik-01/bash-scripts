@@ -15,3 +15,4 @@ openssl pkcs12 -in wildcard.pfx -nokeys -out cert.pem -nodes ##Generate SSL cert
 sar -q -s 06:00:00 -f /var/log/sa/sa08 ##SAR load average on the 8th day of the month, from 6AM
 find / -type f -exec du -Sh {} + | sort -rh | head -n 10 ##Find the largest file in a Linux system
 find . -type d -user <user> ##Find directories owned by user 
+cat <script.sh> | pdsh -w ^hostlist.txt ##Use parallel ssh sessions to run script for multiple hosts in hostlist, requires pdsh package
