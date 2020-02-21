@@ -4,8 +4,13 @@ f0=0
 f1=1
 i=1
 
-printf "\nHow many Fibonacci numbers do you want (max 93): "
-read n
+if [ $# -eq 1 ]
+then
+        n=$1
+else
+        printf "\nHow many Fibonacci numbers do you want (max 93): "
+        read n
+fi
 
 while [ $i -le $n ]
 do
