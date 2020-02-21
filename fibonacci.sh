@@ -9,7 +9,7 @@ read n
 
 while [ $i -le $n ]
 do
-        printf "$f0 \n"
+        printf "$((i-1)): $f0 \n"
         fnew=$(bc <<< "$f0+$f1")
         f0=$f1
         f1=$fnew
