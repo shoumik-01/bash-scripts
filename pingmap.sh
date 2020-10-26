@@ -13,7 +13,7 @@ touch $dir/$file
 while true
 do
         doot=$(date +"[%d/%b/%Y:%k:%M:%S %Z]")
-        ping -c 4 "$IP" > /dev/null
+        ping -i 0.1 -c 4 "$IP" > /dev/null
         if [ $? -eq 0 ]; then
                 echo "$doot: $IP is up" >> $dir/$file
         else
