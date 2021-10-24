@@ -2,7 +2,7 @@
 
 PRCS=$(ps | grep normie_watch | grep -v "grep")
 PID=$(ps | grep normie_watch | grep -v "grep" | awk '{print $1}')
-FILESIZE=$(ls -lh /tmp/trackshim.log | awk '{print $5}')
+FILESIZE=$(ls -lh /tmp/some.log | awk '{print $5}')
 
 function action_running() {
         printf "\nCurrently running normie related process is $PRCS\n"
